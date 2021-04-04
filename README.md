@@ -1,19 +1,17 @@
 # vue-shop
 
-## Project setup
-```
-npm install
-```
+Design your own vue.js project (a web shop) , use what you have learned from the other lectures.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+**Requirements:**
 
-### Compiles and minifies for production
-```
-npm run build
-```
+A single page application with at least three different pages
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+A list of product with at least three different components
+
+A product image for each product (Hint: simple-crud, to find in exercises 9. March)
+
+A Sign up and login functionality (Hint: live-chat hand-inn)
+
+An admin and a CRUD functionality (Hint: simple-crud, to find in exercises 9. March)
+
+At least one component designed with SASS and structured with BEM. (Hint: Lecture 16. March)
