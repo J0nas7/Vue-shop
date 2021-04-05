@@ -30,5 +30,95 @@ h1 {
   font-family: 'Asap';
   font-size: 25px;
   margin-bottom: 20px;
+  float: left;
+}
+
+button#admin {
+  background: green;
+  color: white;
+  float: right;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.clrBth {
+  clear: both;
+}
+
+.searchbar {
+  clear: both;
+}
+
+.searchbar .searchfield {
+  width: 300px;
+  padding: 6px;
+  font-size: 15px;
+  color: #555;
+  border: 1px #ddd solid;
+}
+
+.productsLength {
+  display: block;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.products {
+  clear: both;
+  width: 80%;
+  float: left;
+}
+
+.products .product {
+  margin: 15px 0;
+  float: left;
+  width: 50%;
+  position: relative;
+}
+
+.products .product:nth-child(odd) {
+  clear: both;
+}
+
+.products .product__name, .products .product__price {
+  display: block;
+}
+
+.products .product__name {
+  font-weight: bold;
+}
+
+.products .product__price {
+  color: orange;
+  font-size: 18px;
+}
+
+.products .product__img {
+  display: block;
+  float: left;
+  margin-right: 10px;
+}
+
+.products .product__cta {
+  top: auto;
+  bottom: 0;
+  left: 210px;
+  position: absolute;
+}
+
+.products .product__cta .add_to_cart {
+  background: orange;
+  color: white;
+  border: 0;
+  padding: 6px 15px;
+  border-radius: 5px;
+}
+
+.cart {
+  width: 20%;
+  padding: 0 10px;
+  float: right;
 }
 /*# sourceMappingURL=main.css.map */
