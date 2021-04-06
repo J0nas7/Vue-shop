@@ -108,7 +108,7 @@ button#admin {
   position: absolute;
 }
 
-.products .product__cta .add_to_cart {
+.products .product__cta .addToCart {
   background: orange;
   color: white;
   border: 0;

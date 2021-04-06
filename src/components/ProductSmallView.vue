@@ -5,16 +5,21 @@
     <span class="product__name">{{ product.productName }}</span>
     <span class="product__price">DKK {{ product.productPrice }},-</span>
     <span class="product__cta">
-        <button class="add_to_card">&raquo; Add to cart</button>
+        <button class="addToCart" @click="addToCart(product.id)">&raquo; Add to cart</button>
     </span>
 </template>
 
 <script>
 export default {
     props: ['product'],
-    setup(props) {
+    setup(props, context) {
         const product = props.product
-        return { product }
+
+        const addToCart = (productId) => {
+            context.emit('sendToCart', productId)
+        }
+
+        return { product, addToCart }
     }
 }
 </script>

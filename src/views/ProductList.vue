@@ -1,12 +1,19 @@
 <template>
   <Searchbar @search="performSearch" />
-  <span class="productsLength">{{ formattedDocuments.length }} products</span>
+  <span class="productsLength" v-if="formattedDocuments">{{ formattedDocuments.length }} products</span>
   <div v-if="documents" class="products">
     <div class="product" v-for="doc in formattedDocuments" :key="doc.id">
-        <ProductSmallView :product="doc" />
+        <ProductSmallView @sendToCart="addToCart" :product="doc" />
     </div>
   </div>
-  <Cart />
+  <div class="cart">
+        <span>Shopping Cart ()</span>
+        <!--<div class="cartItems" v-if="cartObj">
+            <div class="cartItem" v-for="(item, index) in cartObj" :key="index">
+                <Cart :cartitem="item" />
+            </div>
+        </div>-->
+  </div>
 </template>
 
 <script>
@@ -16,6 +23,7 @@ import Searchbar from '../components/Searchbar.vue'
 import Cart from '../components/Cart.vue'
 import getCollection from '../composables/getCollection'
 import { computed } from '@vue/runtime-core'
+import { projectFirestore, timestamp } from '../firebase/config'
 
 export default {
     components: { ProductSmallView, Searchbar, Cart },
@@ -37,7 +45,32 @@ export default {
             console.log("SEARCHTERM", searchTerm.value)
         }
 
-        return { searchTerm, performSearch, error, documents, formattedDocuments }
+        let cartID = null
+
+        const addToCart = (productId) => {
+            if (localStorage.getItem("cartID")) {
+                cartID = localStorage.getItem("cartID")
+                projectFirestore.collection("cartItems").add({
+                    createdAt: timestamp(),
+                    cartID: cartID,
+                    productID: productId
+                })
+            } else {
+                createCart();
+            }
+        }
+
+        const createCart = () => {
+            projectFirestore.collection("carts").add({
+                createdAt: timestamp()
+            })
+            .then(function(docRef) {
+                const docId = docRef.id;
+                localStorage.setItem("cartID", docId)
+            });
+        }
+
+        return { searchTerm, performSearch, error, documents, formattedDocuments, addToCart }
     }
 }
 </script>
