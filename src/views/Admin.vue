@@ -51,6 +51,7 @@ export default {
             await login(email.value, password.value)
             if (!errorLogin.value) {
                 console.log("logged in")
+                localStorage.setItem("user", email.value)
                 router.push({ name: 'CRUD' })
             }
         }

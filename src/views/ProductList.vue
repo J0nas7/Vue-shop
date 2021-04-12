@@ -1,7 +1,7 @@
 <template>
   <Searchbar @search="performSearch" />
   <span class="productsLength" v-if="formattedDocuments">{{ formattedDocuments.length }} products</span>
-  <div v-if="documents" class="products">
+  <div v-if="formattedDocuments" class="products">
     <div class="product" :class="{ 'product--highlighted' : doc.productHighlight }" v-for="doc in formattedDocuments" :key="doc.id">
         <ProductSmallView @sendToCart="addToCart" :product="doc" />
     </div>
@@ -83,7 +83,7 @@ export default {
                 }
             }
         }
-
+        
         const checkCartItem = (productId, cartID) => {
             if (localStorage.getItem("cartID")) {
                 cartID = localStorage.getItem("cartID")
