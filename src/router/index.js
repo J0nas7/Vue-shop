@@ -25,7 +25,7 @@ const requireNoAuth = (to, from, next) => {
   }
 }
 
-const domain = ''//'/js-elective/4th-handin'
+const domain = '/js-elective/4th-handin'
 const routes = [
   {
     path: domain+'/',

@@ -63,7 +63,7 @@ export default {
             }
 
             if (file.value) {
-                await uploadImage(fileUpdate.value)
+                await uploadImage(file.value)
                 updates.imageUrl = url.value
                 updates.filePath = filePath.value
             }
