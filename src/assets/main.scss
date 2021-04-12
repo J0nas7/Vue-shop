@@ -42,9 +42,16 @@ button#admin {
     border-radius: 5px;
 }
 
-.blueLink { color: blue; }
+.blueLink { color: blue; cursor: pointer; }
 .crsPnt { cursor: pointer; }
 .clrBth { clear: both; }
+
+input[type="text"], input[type="password"] {
+    width: 200px;
+    margin: 2px 0;
+    padding: 6px;
+    border: 1px darkgreen solid;
+}
 
 .topbar {
     width: 100%;
@@ -253,4 +260,12 @@ button#admin {
             }
         }
     }
+}
+
+button.loginBtn {
+    width: 100px;
+    padding: 6px;
+    background: darkgreen;
+    color: white;
+    border: none;
 }

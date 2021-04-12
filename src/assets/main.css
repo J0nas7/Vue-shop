@@ -45,6 +45,7 @@ button#admin {
 
 .blueLink {
   color: blue;
+  cursor: pointer;
 }
 
 .crsPnt {
@@ -53,6 +54,13 @@ button#admin {
 
 .clrBth {
   clear: both;
+}
+
+input[type="text"], input[type="password"] {
+  width: 200px;
+  margin: 2px 0;
+  padding: 6px;
+  border: 1px darkgreen solid;
 }
 
 .topbar {
@@ -260,5 +268,13 @@ button#admin {
 
 .cartContainer .cartSum .content .checkout {
   margin-top: 20px;
+}
+
+button.loginBtn {
+  width: 100px;
+  padding: 6px;
+  background: darkgreen;
+  color: white;
+  border: none;
 }
 /*# sourceMappingURL=main.css.map */
