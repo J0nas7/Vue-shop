@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <div class="topbar">
-      <h1>Skillema-dinga-du vue-shop</h1>
+      <h1 @click="goToFront">Skillema-dinga-du vue-shop</h1>
       <button @click="goToAdmin" id="admin">Admin</button>
     </div>
     <router-view/>
@@ -20,7 +20,11 @@ export default {
       router.push({ name: 'AdminArea' })
     }
 
-    return { goToAdmin }
+    const goToFront = () => {
+      router.push({ name: 'ProductList' })
+    }
+
+    return { goToAdmin, goToFront }
   }
 }
 </script>

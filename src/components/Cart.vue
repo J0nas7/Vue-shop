@@ -1,5 +1,5 @@
 <template>
-    <div class="productView" v-if="productDetails.productImg">
+    <div class="productView" v-if="productDetails.imageUrl">
         <ProductSmallView :product="productDetails" :mini="mini" />
     </div>
     <div class="cartitem">
