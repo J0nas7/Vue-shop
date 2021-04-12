@@ -40,10 +40,14 @@ export default {
         const adminCode = ref('')
 
         const handleCreate = async () => {
-            await signup(email.value, password.value)
-            if (!error.value) {
-                console.log("created")
-                router.push({ name: 'CRUD' })
+            if (adminCode.value == "QWERTY") {
+                await signup(email.value, password.value)
+                if (!error.value) {
+                    console.log("created")
+                    router.push({ name: 'CRUD' })
+                }
+            } else {
+                alert("Wrong admin code!")
             }
         }
 
