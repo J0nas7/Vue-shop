@@ -41,7 +41,7 @@ export default {
 
         const handleCreate = async () => {
             if (adminCode.value == "QWERTY") {
-                await signup(email.value, password.value)
+                await signup(newEmail.value, newPassword.value)
                 if (!error.value) {
                     console.log("created")
                     router.push({ name: 'CRUD' })
@@ -55,7 +55,6 @@ export default {
             await login(email.value, password.value)
             if (!errorLogin.value) {
                 console.log("logged in")
-                localStorage.setItem("user", email.value)
                 router.push({ name: 'CRUD' })
             }
         }
